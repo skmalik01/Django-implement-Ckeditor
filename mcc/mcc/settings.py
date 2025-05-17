@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'mcc_app',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -70,13 +71,21 @@ TEMPLATES = [
     },
 ]
 
+CKEDITOR_ALLOW_NONIMAGE_FILES = True
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full',
+        'toolbar': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList'],
+            ['Link', 'Unlink'],
+            ['Image', 'Table'],
+            ['Source']
+        ],
         'height': 300,
         'width': '100%',
     },
 }
+
 
 
 WSGI_APPLICATION = 'mcc.wsgi.application'

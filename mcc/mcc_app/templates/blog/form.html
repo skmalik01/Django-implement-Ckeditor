@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Article</title>
+    {{ form.media }} <!-- important -->
+</head>
+<body>
+    <h1>Create New Article</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Publish</button>
+    </form>
+</body>
+</html>

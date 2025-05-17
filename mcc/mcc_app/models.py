@@ -7,6 +7,8 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     content = RichTextField()
     contentupload = RichTextUploadingField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    
     
     def __str__(self) -> str:
         return self.title
